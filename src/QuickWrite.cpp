@@ -1,15 +1,15 @@
 /* UTF-8 */
 // 快速读取数字的算法模板
 #include <cctype>
+#include <concepts>
 #include <iostream>
 #include <limits>
-#include <type_traits>
 
 /**
  * @brief 快速输出整数
  * @param num 需要输出的整数
  */
-template <typename T, typename = std::enable_if_t<std::is_integral_v<T>>>
+template <std::integral T>
 void QuickWrite(T num) {
     // 栈来存储数字的各位字符，先进后出
     static unsigned char stack[20];

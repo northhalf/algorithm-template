@@ -1,7 +1,7 @@
 /* UTF-8 */
 // 快速幂算法模板
+#include <concepts>
 #include <stdexcept>
-#include <type_traits>
 
 /*
  @brief 计算一个数的n次幂运算结果
@@ -9,9 +9,7 @@
  @param exponent: 指数
  @return 运算结果
  **/
-template <
-    typename T1, typename T2,
-    typename = typename std::enable_if_t<std::is_integral_v<T2>>>
+template <typename T1, std::integral T2>
 T1 QuickPow(T1 base, T2 exponent) {
     // 要求指数为正整数
     if (exponent <= 0)

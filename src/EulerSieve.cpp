@@ -9,8 +9,7 @@
  @param n: 素数最大范围
  @return 包含素数数组和素数标记的元组
  **/
-template <
-    typename T, typename = typename std::enable_if_t<std::is_integral_v<T>>>
+template <std::integral T>
 std::tuple<std::vector<T>, std::vector<bool>> EulerSieve(T n) {
     // n 必须为自然数
     if (n < 0) throw std::out_of_range("Error: n must be a natural number");

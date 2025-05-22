@@ -1,14 +1,14 @@
 /* UTF-8 */
 // 快速读取数字的算法模板
 #include <cctype>
+#include <concepts>
 #include <iostream>
-#include <type_traits>
 
 /**
  * @brief 快速读取输入的整数
  * @return 读取到的数字
  */
-template <typename T, typename = std::enable_if_t<std::is_integral_v<T>>>
+template <std::integral T>
 T QuickRead() {
     bool minus = false;  // 记录该数字是否为负数
     T res = 0;
